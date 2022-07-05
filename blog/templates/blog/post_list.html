@@ -1,23 +1,21 @@
 <html>
-    <head> <!-- Insere um título que encabeça a guia no navegador-->
-        <title>Blog HarmonyMap</title> <!-- Título da página -->
-    </head> <!-- Corpo da página -->
-<h1>HarmonyMap</h1>
-<h3>Os acordes de todos os campos harmônicos ao seu alcance!</h3>
+
+<head>
+    <title>Blog Django Girls</title>
+</head>
+
 <body>
-    <h2>O que o HarmonyMap faz?</h2>
-    O HarmonyMap apresenta para você uma <em>lista básica de acordes</em> que você pode usar em um campo harmônico de sua preferência. <br>
-    Por exemplo, digamos que você queira saber que acordes usar para improvisar dentro do campo harmônico de C Maior.
-    <p>Será apresentada a seguinte lista, neste caso:</p> <!-- A tag "<em>texto</em> coloca o texto em itálico!"-->
-    <p><ul>
-        <li> > C Maior</li><li>> D Menor</li><li>> E Menor</li><li>> F Maior</li><li>> G Maior</li><li>> A Menor</li><li>> B Diminuto</li>
-    </ul> <!--A tag "<li>texto</li> cria uma lista!" -->
-    <p>Legal, né? É ideal para quem está precisando construir novas harmonias e não tem tanto tempo sobrando.</p><br>
-    O HarmonyMap auxilia àqueles que tem dificuldades em entender como o campo harmônico funciona.<br>
-    Porém, se você <strong>deseja aprender mais detalhadamente</strong> como o campo harmônico é construído e quais são<br> <!-- Tag "<strong>" deixa o texto em negrito.-->
-    os conceitos principais ligados a ele, confira o <a href="https://www.youtube.com/playlist?list=PL0rOhRRyzzX67efn2P5r5m54hJ1eYbwXE">confirira esta playlist de vídeoaulas sobre o assunto.</a>.
-         
-    </p>  
+    <div>
+        <h1><a href="/">Django Girls Blog</a></h1>
+    </div>
+    
+    {% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p> <!-- A tag "linebreaks" está convertendo o conteúdo de post, convertendo quebras de linhas em parágrafos.-->
+    </div>
+    {% endfor %}
 </body>
 
 </html>
